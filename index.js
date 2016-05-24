@@ -56,7 +56,7 @@ var groups = function (done) {
         }
         cb();
       }, function flush(cb) {
-        started && this.push(groups)
+        started && this.push(groups.filter(function (g){ return !!g.length;}))
         cb();
       })
     )
@@ -96,6 +96,7 @@ var groupDetails = function (name, done) {
           details.users.pop();
           details.users.pop();
           details.users.pop();
+          details.users = details.users.filter(function (g){ return !!g.length;})
           this.push(details)
         }
         cb();
@@ -198,11 +199,11 @@ var userDetails = function (name, done) {
           details['Local Group Memberships'] = details['Local Group Memberships']
           .split(/\s{2,}/g).map(function (g) {
             return g.replace(/^\*/, '')
-          });
+          }).filter(function (g){return !!g.length;});
           details['Global Group Memberships'] = details['Global Group Memberships']
           .split(/\s{2,}/g).map(function (g) {
             return g.replace(/^\*/, '')
-          });
+          }).filter(function (g){return !!g.length;});
           this.push(details)
         }
         cb();

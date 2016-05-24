@@ -1,0 +1,36 @@
+{
+  "name": "@mh-cbon/windows-net",
+  "version": "1.0.0",
+  "description": "Execute windows net commands and get JSON responses",
+  "main": "index.js",
+  "bin": {
+    "jnet": "./bin.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "patch": "npm version patch -m \"patch %s\"",
+    "minor": "npm version minor -m \"minor %s\"",
+    "major": "npm version major -m \"major %s\"",
+    "preversion": "echo \"npm test: not defined\"",
+    "version": "echo \"npm run build: not defined\"",
+    "postversion": "git push && git push --tags && npm run public",
+    "public": "npm publish --access=public"
+  },
+  "keywords": [
+    "windows",
+    "net"
+  ],
+  "author": "mh-cbon <mh-cbon@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@mh-cbon/c-aghfabsowecwn": "^1.0.2",
+    "debug": "^2.2.0",
+    "debug-stream": "^3.0.1",
+    "minimist": "^1.2.0",
+    "mississippi": "^1.2.0",
+    "split": "^1.0.0"
+  },
+  "devDependencies": {
+    "should": "^8.4.0"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@mh-cbon/windows-net",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Execute windows net commands and get JSON responses",
   "main": "index.js",
   "bin": {

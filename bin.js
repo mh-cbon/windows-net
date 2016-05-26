@@ -51,9 +51,8 @@ if (command==='groups') {
   winNet.groups(function (err, groups) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(groups, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(groups, null, 2))
   })
 
 } else if (command==='group') {
@@ -61,9 +60,8 @@ if (command==='groups') {
   winNet.groupDetails(name, function (err, details) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(details, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(details, null, 2))
   })
 
 } else if (command==='has_group') {
@@ -71,9 +69,8 @@ if (command==='groups') {
   winNet.groupExists(name, function (err, exists) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(exists, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(exists, null, 2))
   })
 
 } else if (command==='new_group') {
@@ -81,9 +78,8 @@ if (command==='groups') {
   winNet.groupAdd(name, {}, function (err) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(true, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(true, null, 2))
   })
 
 } else if (command==='rem_group') {
@@ -91,27 +87,24 @@ if (command==='groups') {
   winNet.groupRemove(name, {}, function (err) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(true, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(true, null, 2))
   })
 
 } else if (command==='users') {
   winNet.users(function (err, users) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(users, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(users, null, 2))
   })
 } else if (command==='user') {
   var name = argv['_'] && argv['_'][1];
   winNet.userDetails(name, function (err, details) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(details, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(details, null, 2))
   })
 
 } else if (command==='new_user') {
@@ -119,9 +112,8 @@ if (command==='groups') {
   winNet.userAdd(name, {}, function (err) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(true, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(true, null, 2))
   })
 
 } else if (command==='rem_user') {
@@ -129,9 +121,8 @@ if (command==='groups') {
   winNet.userRemove(name, {}, function (err) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(true, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(true, null, 2))
   })
 
 } else if (command==='has_user') {
@@ -139,9 +130,8 @@ if (command==='groups') {
   winNet.userExists(name, function (err, exists) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(exists, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(exists, null, 2))
   })
 
 } else if (command==='group_add_user') {
@@ -150,9 +140,8 @@ if (command==='groups') {
   winNet.groupAddUser(group, user, {}, function (err) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(true, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(true, null, 2))
   })
 
 } else if (command==='group_rem_user') {
@@ -161,9 +150,8 @@ if (command==='groups') {
   winNet.groupRemUser(group, user, {}, function (err) {
     if (err) {
       console.error(err);
-      process.exit(1);
-    }
-    console.log(JSON.stringify(true, null, 2))
+      process.exitCode = 1;
+    } else console.log(JSON.stringify(true, null, 2))
   })
 
 }
